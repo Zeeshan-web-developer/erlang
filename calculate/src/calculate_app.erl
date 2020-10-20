@@ -1,0 +1,18 @@
+%%%-------------------------------------------------------------------
+%% @doc calculate public API
+%% @end
+%%%-------------------------------------------------------------------
+
+-module(calculate_app).
+
+-behaviour(application).
+
+-export([start/2, stop/1]).
+
+start(_StartType, _StartArgs) ->
+    calculate_sup:start_link().
+
+stop(_State) ->
+    ok.
+
+%% internal functions
